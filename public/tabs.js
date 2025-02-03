@@ -37,7 +37,7 @@ class Tab {
   }
 
   updateFavicon() {
-    if (this.url === 'harry:newtab') return;
+    if (this.url === 'haru:newtab') return;
     
     try {
       const domain = new URL(this.url).hostname;
@@ -187,7 +187,7 @@ class Tab {
           const query = event.data.url;
           const url = query.includes('.') || query.startsWith('http')
             ? (query.startsWith('http') ? query : `https://${query}`)
-            : `https://homepage.miui.com/s?re=US&c=9977042961#gsc.tab=0&gsc.q=${encodeURIComponent(query)}`;
+            : `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
           this.url = url;
           this.navigateToUrl(url);
           this.updateFavicon();
@@ -198,7 +198,7 @@ class Tab {
     
     window.addEventListener('message', (event) => {
       if (event.data.type === 'newWindow') {
-        window.dispatchEvent(new CustomEvent('harry:newTab', {
+        window.dispatchEvent(new CustomEvent('haru:newTab', {
           detail: { url: event.data.url }
         }));
       }
