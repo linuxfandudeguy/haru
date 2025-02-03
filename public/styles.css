@@ -16,8 +16,7 @@ body {
   line-height: 1.5;
   background-color: #2B2A33;
   color: #FBFBFE;
-  overflow-x: auto; /* Enables horizontal scrolling */
-  overflow-y: auto; 
+; 
 }
 
 /* Universal element styles for consistency */
@@ -334,6 +333,8 @@ h1, h2, h3, h4, h5, h6 {
 
   .browser-content {
     padding: 0.5rem;
+    overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-y: auto
   }
 
   .nav-btn {
