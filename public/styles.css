@@ -1,10 +1,57 @@
-* {
+/* Normalize CSS to ensure consistent styling across browsers */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+html {
+  font-size: 16px; /* Default font size for scaling */
+}
+
+body {
+  line-height: 1.5;
+  background-color: #2B2A33;
+  color: #FBFBFE;
+}
+
+/* Universal element styles for consistency */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img, picture, video, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: transparent;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-size: 2rem; /* Scalable font size for headings */
+}
+
+/* Default padding and box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Layout for Browser Container */
 .browser {
   height: 100vh;
   display: flex;
@@ -12,6 +59,7 @@
   background: #2B2A33;
 }
 
+/* Toolbar styling */
 .toolbar {
   height: 44px;
   background: #1C1B22;
@@ -22,6 +70,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Navigation Buttons */
 .nav-buttons {
   display: flex;
   gap: 6px;
@@ -30,9 +79,6 @@
 .nav-btn {
   width: 32px;
   height: 32px;
-  border: none;
-  background: transparent;
-  color: #FBFBFE;
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
@@ -55,6 +101,7 @@
   font-size: 18px;
 }
 
+/* URL Bar */
 .url-bar {
   flex: 1;
   height: 36px;
@@ -86,6 +133,7 @@
   height: 100%;
 }
 
+/* Tabs Bar */
 .tabs-bar {
   height: 40px;
   background: #1C1B22;
@@ -107,6 +155,7 @@
   display: none;
 }
 
+/* Tab Styling */
 .tab {
   min-width: 100px;
   max-width: 240px;
@@ -159,10 +208,10 @@
   border-radius: 3px;
 }
 
+/* Close Tab Button */
 .close-tab {
   width: 20px;
   height: 20px;
-  border: none;
   background: transparent;
   color: #FBFBFE;
   border-radius: 50%;
@@ -178,30 +227,10 @@
   background: #666;
 }
 
-.new-tab {
+/* New Tab Button */
+.new-tab, .fullscreen-btn {
   width: 32px;
   height: 32px;
-  border: none;
-  background: transparent;
-  color: #FBFBFE;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-left: 4px;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s;
-}
-
-.new-tab:hover {
-  background: #52525E;
-}
-
-.fullscreen-btn {
-  width: 32px;
-  height: 32px;
-  border: none;
   background: transparent;
   color: #FBFBFE;
   border-radius: 6px;
@@ -214,15 +243,17 @@
   transition: background-color 0.2s;
 }
 
-.fullscreen-btn:hover {
+.new-tab:hover, .fullscreen-btn:hover {
   background: #52525E;
 }
 
+/* Browser Content */
 .browser-content {
   flex: 1;
   background: white;
 }
 
+/* Embed Wrapper */
 .embed-wrapper {
   width: 100%;
   height: 100%;
@@ -241,37 +272,96 @@
   border: none;
 }
 
+/* Logo */
 .logo {
   display: none;
 }
 
+/* Search Box */
 .search-box {
-  width: 600px !important;
-  height: 48px !important;
-  background: #42414D !important;
-  border-radius: 24px !important;
-  border: 2px solid transparent !important;
-  padding: 0 24px !important;
-  color: #FBFBFE !important;
-  font-size: 16px !important;
-  outline: none !important;
-  transition: all 0.2s !important;
-  margin-bottom: 2rem !important;
+  width: 100%;
+  max-width: 600px;
+  height: 48px;
+  background: #42414D;
+  border-radius: 24px;
+  border: 2px solid transparent;
+  padding: 0 24px;
+  color: #FBFBFE;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s;
+  margin-bottom: 2rem;
 }
 
 .search-box:hover {
-  background: #52525E !important;
+  background: #52525E;
 }
 
 .search-box:focus {
-  border-color: #00C2FF !important;
-  background: #52525E !important;
+  border-color: #00C2FF;
+  background: #52525E;
 }
 
+/* Haru Logo */
 .haru-logo {
   font-size: 48px;
   color: #FF69B4;
   font-weight: bold;
   margin-bottom: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 0 8px;
+  }
+
+  .tabs-bar {
+    height: 36px;
+  }
+
+  .tab {
+    flex: 1 1 150px;
+    min-width: 120px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .browser-content {
+    padding: 0.5rem;
+  }
+
+  .nav-btn {
+    font-size: 14px;
+  }
+
+  .url-bar {
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar {
+    padding: 0 4px;
+  }
+
+  .tab {
+    flex: 1 1 120px;
+    min-width: 100px;
+  }
+
+  .search-box {
+    padding: 0 16px;
+  }
+
+  .url-bar {
+    height: 30px;
+  }
+
+  .nav-btn {
+    font-size: 12px;
+  }
 }
