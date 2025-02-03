@@ -16,6 +16,8 @@ body {
   line-height: 1.5;
   background-color: #2B2A33;
   color: #FBFBFE;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-y: auto; 
 }
 
 /* Universal element styles for consistency */
