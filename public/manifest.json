@@ -1,0 +1,22 @@
+{
+  "name": "Haru Browser",
+  "short_name": "Haru",
+  "description": "A simple web browser inside of a browser.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/6475165.png",
+      "sizes": "2048x2048",
+      "type": "image/png"
+    },
+    {
+      "src": "/6475165.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
