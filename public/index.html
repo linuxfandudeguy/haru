@@ -8,6 +8,15 @@
   <script src="./custom-elements-builtin.js"></script>
   <script src="./x-frame-bypass.js" type="module"></script>
   <script src="./tabs.js" defer></script>
+   <link rel="manifest" href="/manifest.json"><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      }).catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+    }
+  </script>
 </head>
 <body>
   <div class="browser">
