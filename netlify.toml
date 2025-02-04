@@ -1,0 +1,13 @@
+[build]
+  command = "pnpm install"  # Installs dependencies
+  publish = "."  # Ensures all files are accessible
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.mjs"
+  status = 200
