@@ -1,6 +1,6 @@
 [build]
   command = "pnpm install"
-  publish = "public"  # This tells Netlify to serve static assets from `public/` folder
+  publish = "."  
 
 [[functions]]
   directory = "."  # This tells Netlify to look in the root directory for your serverless functions (like `index.mjs`)
