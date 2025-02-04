@@ -1,8 +1,8 @@
 [build]
   command = "pnpm install"
-  publish = "."  
+  publish = "."
 
-[[functions]]
+[functions]
   directory = "."  # This tells Netlify to look in the root directory for your serverless functions (like `index.mjs`)
 
 [[headers]]
