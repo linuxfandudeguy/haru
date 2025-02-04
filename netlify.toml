@@ -1,6 +1,9 @@
 [build]
-  command = "pnpm install"  # Installs dependencies
-  publish = "."  # Ensures all files are accessible
+  command = "pnpm install"
+  publish = "public"  # Serve static assets from `public/` folder
+
+[[functions]]
+  directory = "."  # Assuming `index.mjs` is in the root directory
 
 [[headers]]
   for = "/*"
@@ -8,6 +11,7 @@
     Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.mjs"
+  from = "/frame"
+  to = "/index.mjs"  # Point to the `index.mjs` serverless function
   status = 200
+  force = true
