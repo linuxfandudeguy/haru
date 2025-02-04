@@ -1,3 +1,4 @@
+// class for tab
 class Tab {
   constructor(url = 'haru:newtab') {
     this.url = url;
@@ -112,7 +113,7 @@ class Tab {
           <body>
             <div class="haru-logo"><img src="6475165.png" alt="haru"></div>
             <input type="text" class="search-box" placeholder="Search or enter address" autofocus>
-<div class="bookmarks-container">
+<div class="bookmark">
   <a href="https://xkcd.com/" target="_blank">xkcd</a>
   <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
   <a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a>
