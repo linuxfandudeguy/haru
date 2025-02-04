@@ -1,6 +1,6 @@
 // class for tab
 class Tab {
-  constructor(url = 'haru:newtab') {
+  constructor(url = 'haru:newtab') { // custom protocall for new tab
     this.url = url;
     this.title = 'New Tab';
     this.favicon = null;
