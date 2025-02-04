@@ -108,6 +108,13 @@ class Tab {
               .bookmark:hover {
                 background: #52525E;
               }
+              .bookmark a {
+  color: #ffffff; /* White color using hex */
+}
+
+.bookmark a:hover {
+  color: #cccccc; /* Light gray color on hover */
+}
             </style>
           </head>
           <body>
