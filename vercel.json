@@ -9,7 +9,10 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/server.mjs"
+      "dest": "/server.mjs",
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     }
   ]
 }
