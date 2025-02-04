@@ -113,17 +113,26 @@ class Tab {
           <body>
             <div class="haru-logo"><img src="6475165.png" alt="haru"></div>
             <input type="text" class="search-box" placeholder="Search or enter address" autofocus>
-<div class="bookmarks-container">
-  <a href="https://xkcd.com/" target="_blank">xkcd</a>
-  <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
-  <a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a>
-  <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a>
-  <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
-  <a href="https://github.com/" target="_blank">GitHub</a>
-  <a href="https://www.amazon.com/" target="_blank">Amazon</a>
-  <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+
+<div class="bookmarks">
+    <div class="bookmark">
+        <a href="https://www.example.com">Example</a>
+    </div>
+    <div class="bookmark">
+        <a href="https://www.wikipedia.org">Wikipedia</a>
+    </div>
+    <div class="bookmark">
+        <a href="https://www.github.com">GitHub</a>
+    </div>
+    <div class="bookmark">
+        <a href="https://www.duolingo.com">Duolingo</a>
+    </div>
+    <div class="bookmark">
+        <a href="https://eggifier.vercel.app">Eggifier™</a>
+    </div>
 </div>
-            <script>
+
+    <script>
               document.querySelector('.search-box').addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                   const query = e.target.value;
