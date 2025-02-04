@@ -113,7 +113,16 @@ class Tab {
           <body>
             <div class="haru-logo"><img src="6475165.png" alt="haru"></div>
             <input type="text" class="search-box" placeholder="Search or enter address" autofocus>
-
+<div class="bookmarks-container">
+  <a href="https://xkcd.com/" target="_blank">xkcd</a>
+  <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
+  <a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a>
+  <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a>
+  <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
+  <a href="https://github.com/" target="_blank">GitHub</a>
+  <a href="https://www.amazon.com/" target="_blank">Amazon</a>
+  <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+</div>
             <script>
               document.querySelector('.search-box').addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
