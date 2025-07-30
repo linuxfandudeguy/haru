@@ -1,0 +1,13 @@
+[build]
+  functions = "functions"
+  publish = "public"  # or wherever your static files are
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+  force = true
+  headers = { Cache-Control = "no-store" }
+
+[functions]
+  node_bundler = "esbuild"
