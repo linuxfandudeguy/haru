@@ -1,43 +1,36 @@
 import express from "express";
 import cors from "cors";
-import fetch from "node-fetch";
-import path from "path";
-import { fileURLToPath } from "url";
-
-// Convert import.meta.url to __dirname equivalent
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { URL } from "url";
+import http from "http";
+import https from "https";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Enable CORS for all routes
 app.use(cors());
 
-// Serve static files from the "public" folder (using an absolute path)
-app.use(express.static(path.join(__dirname, "public")));
+app.get("/frame", (req, res) => {
+  const urlStr = req.query.url;
+  if (!urlStr) return res.status(400).json({ error: "Missing 'url' query parameter" });
 
-// CORS Proxy endpoint
-app.get("/frame", async (req, res) => {
-    const { url } = req.query;
-    if (!url) {
-        return res.status(400).json({ error: "Missing 'url' query parameter" });
-    }
+  let url;
+  try {
+    url = new URL(urlStr);
+  } catch {
+    return res.status(400).json({ error: "Invalid URL" });
+  }
 
-    try {
-        const response = await fetch(url, {
-            headers: { "User-Agent": "Mozilla/5.0" }
-        });
-        
-        const contentType = response.headers.get("content-type");
-        res.set("Content-Type", contentType);
-        response.body.pipe(res);
-    } catch (error) {
-        res.status(500).json({ error: "Failed to fetch resource", details: error.message });
-    }
+  const lib = url.protocol === "https:" ? https : http;
+
+  const options = {
+    headers: { "User-Agent": "Mozilla/5.0" }
+  };
+
+  lib.get(url, options, (proxyRes) => {
+    res.setHeader("Content-Type", proxyRes.headers["content-type"] || "application/octet-stream");
+    proxyRes.pipe(res);
+  }).on("error", (err) => {
+    res.status(500).json({ error: "Failed to fetch resource", details: err.message });
+  });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+export const handler = serverless(app);
